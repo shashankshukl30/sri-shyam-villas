@@ -2,7 +2,7 @@
 
 import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
+const WHATSAPP_LINK = "https://wa.me/917307491291?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
 
 const quickLinks = [
     { name: "Home", href: "#home" },
@@ -97,11 +97,11 @@ export default function Footer() {
                                 <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', lineHeight: 1.6 }}>D.61/3-A, Siddhagiribagh,<br />Varanasi, UP 221010</span>
                             </div>
                         </div>
-                        <a href="tel:+919876543210" className="flex items-center" style={{ gap: '0.75rem', color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', textDecoration: 'none', marginBottom: '0.75rem' }}>
-                            <Phone size={16} style={{ color: '#C9A96E', flexShrink: 0 }} />+91 98765 43210
+                        <a href="tel:+917307491291" className="flex items-center" style={{ gap: '0.75rem', color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', textDecoration: 'none', marginBottom: '0.75rem' }}>
+                            <Phone size={16} style={{ color: '#C9A96E', flexShrink: 0 }} />+91 73074 91291
                         </a>
-                        <a href="mailto:info@srishyamvillas.com" className="flex items-center" style={{ gap: '0.75rem', color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', textDecoration: 'none' }}>
-                            <Mail size={16} style={{ color: '#C9A96E', flexShrink: 0 }} />info@srishyamvillas.com
+                        <a href="mailto:srishyamvillas@gmail.com" className="flex items-center" style={{ gap: '0.75rem', color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', textDecoration: 'none' }}>
+                            <Mail size={16} style={{ color: '#C9A96E', flexShrink: 0 }} />srishyamvillas@gmail.com
                         </a>
                     </div>
 

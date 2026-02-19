@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Maximize2, Wifi, Wind, Eye, Users, MessageCircle } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
 
-const WHATSAPP_LINK = "https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
+const WHATSAPP_LINK = "https://wa.me/917307491291?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
 
 const rooms = [
     {

@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20rooms%20at%20Sri%20Shyam%20Villas";
+const WHATSAPP_LINK = "https://wa.me/917307491291?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20rooms%20at%20Sri%20Shyam%20Villas";
 
 export default function Contact() {
     const ref = useRef(null);
@@ -70,8 +70,8 @@ export default function Contact() {
                         </p>
 
                         {[
-                            { icon: Phone, title: "Call Us", info: "+91 98765 43210", sub: "Available 24/7", href: "tel:+919876543210" },
-                            { icon: Mail, title: "Email Us", info: "info@srishyamvillas.com", sub: "We reply within 24 hours", href: "mailto:info@srishyamvillas.com" },
+                            { icon: Phone, title: "Call Us", info: "+91 73074 91291", sub: "Available 24/7", href: "tel:+917307491291" },
+                            { icon: Mail, title: "Email Us", info: "srishyamvillas@gmail.com", sub: "We reply within 24 hours", href: "mailto:srishyamvillas@gmail.com" },
                             { icon: MapPin, title: "Visit Us", info: "D.61/3-A, Siddhagiribagh", sub: "Varanasi, UP 221010", href: "https://maps.google.com/?q=Sri+Shyam+Villas+Varanasi" },
                         ].map((item) => (
                             <a

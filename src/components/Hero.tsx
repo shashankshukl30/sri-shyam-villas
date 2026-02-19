@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MessageCircle, Star, MapPin, Calendar, Shield } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
+const WHATSAPP_LINK = "https://wa.me/917307491291?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
 
 const heroImages = [
     { src: "/images/hotel/hero-1.jpg", alt: "Sri Shyam Villas Exterior" },
@@ -157,7 +157,7 @@ export default function Hero() {
                         >
                             {[
                                 { icon: Star, label: "Guest Rating", value: "4.4 / 5" },
-                                { icon: MapPin, label: "Kashi Temple", value: "4.7 km" },
+                                { icon: MapPin, label: "Kashi Temple", value: "2.6 km" },
                                 { icon: Calendar, label: "Established", value: "2024" },
                             ].map((stat, i) => (
                                 <div

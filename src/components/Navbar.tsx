@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
+const WHATSAPP_LINK = "https://wa.me/917307491291?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
 
 const links = [
     { name: "Home", href: "#home" },
@@ -83,7 +83,7 @@ export default function Navbar() {
                     {/* Desktop CTA */}
                     <div className="hidden lg:flex items-center" style={{ gap: '1rem' }}>
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+917307491291"
                             className="flex items-center"
                             style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.85rem', gap: '0.5rem', textDecoration: 'none', fontWeight: 500 }}
                             onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A96E')}
