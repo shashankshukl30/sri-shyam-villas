@@ -123,14 +123,14 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem' }}>
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between" style={{ gap: '1rem' }}>
-                    <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.85rem' }}>
+                <div className="max-w-7xl mx-auto flex flex-col items-center justify-center" style={{ gap: '0.75rem' }}>
+                    <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.85rem', textAlign: 'center' }}>
                         © {new Date().getFullYear()} Sri Shyam Villas. All rights reserved.
                     </p>
                     <p className="flex items-center" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.85rem', gap: '0.3rem' }}>
                         Designed & Developed by{" "}
                         <a href="https://digiocular.com" target="_blank" rel="noopener noreferrer"
-                            style={{ color: '#C9A96E', fontWeight: 600, textDecoration: 'none' }}>
+                            style={{ color: '#C9A96E', fontWeight: 600, textDecoration: 'none', cursor: 'pointer' }}>
                             Digiocular
                         </a>
                     </p>
