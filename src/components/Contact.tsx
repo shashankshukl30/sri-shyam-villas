@@ -201,7 +201,7 @@ export default function Contact() {
                                         style={{ width: '100%', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', padding: '0.9rem 1.25rem', color: 'white', fontSize: '1rem', outline: 'none', resize: 'none' }}
                                         placeholder="Any specific requirements..." />
                                 </div>
-                                <button type="submit" disabled={sending} className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '1.1rem', borderRadius: '10px' }}>
+                                <button type="submit" disabled={sending} className="btn-primary" style={{ width: '100%', justifyContent: 'center', borderRadius: '10px' }}>
                                     {sending ? "Sending Inquiry..." : "Submit Booking Inquiry"}
                                     <Send size={16} />
                                 </button>

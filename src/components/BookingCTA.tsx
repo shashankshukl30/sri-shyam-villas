@@ -36,8 +36,6 @@ export default function BookingCTA() {
                     <div
                         className="btn-whatsapp-sm relative"
                         style={{
-                            padding: '1rem 1.75rem',
-                            fontSize: '0.95rem',
                             boxShadow: '0 4px 12px rgba(0,0,0,0.2), 0 10px 32px rgba(37,211,102,0.4)',
                         }}
                     >

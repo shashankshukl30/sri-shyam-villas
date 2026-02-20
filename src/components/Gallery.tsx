@@ -31,9 +31,9 @@ export default function Gallery() {
                     <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
                         <span className="section-label" style={{ display: 'block' }}>Gallery</span>
                         <h2 className="section-title" style={{ marginTop: '1rem' }}>
-                            A Visual Journey
+                            See It for Yourself
                             <br />
-                            <span style={{ color: '#C9A96E', fontStyle: 'italic', fontWeight: 400 }}>Through Our Property</span>
+                            <span style={{ color: '#C9A96E', fontStyle: 'italic', fontWeight: 400 }}>Glimpses of Sri Shyam Villas</span>
                         </h2>
                         <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
                     </motion.div>
@@ -55,6 +55,8 @@ export default function Gallery() {
                                 alt={img.alt}
                                 className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                                 style={{ objectFit: 'cover' }}
+                                loading={i === 0 ? 'eager' : 'lazy'}
+                                decoding="async"
                             />
                             <div
                                 className="absolute inset-0 flex items-center justify-center transition-all duration-500"

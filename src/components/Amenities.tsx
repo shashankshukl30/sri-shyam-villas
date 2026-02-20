@@ -53,8 +53,7 @@ export default function Amenities() {
                         </h2>
                         <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
                         <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '1rem', color: 'rgba(255,255,255,0.55)' }}>
-                            From modern conveniences to personalized services, we&apos;ve thought of
-                            every detail to make your stay seamless.
+                            From high-speed Wi-Fi and 24/7 room service to airport transfers and curated temple tours — every detail is handled so you can focus on what matters: your experience in Varanasi.
                         </p>
                     </motion.div>
                 </div>

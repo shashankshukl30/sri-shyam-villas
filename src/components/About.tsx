@@ -68,10 +68,7 @@ export default function About() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             style={{ color: '#6B6B6B', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}
                         >
-                            Nestled in the serene lanes of Siddhagiribagh, Sri Shyam Villas offers a
-                            tranquil escape from the vibrant bustle of Varanasi. Our boutique property
-                            is thoughtfully designed to blend contemporary comfort with the spiritual
-                            essence of one of the world&apos;s oldest living cities.
+                            Nestled in the quiet lanes of Siddhagiribagh, Sri Shyam Villas was born from a simple belief — that every guest deserves to feel at home in one of the world&apos;s most extraordinary cities. Our boutique property blends the warmth of Indian hospitality with the elegance of modern design.
                         </motion.p>
 
                         <motion.p
@@ -80,10 +77,7 @@ export default function About() {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             style={{ color: '#6B6B6B', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem' }}
                         >
-                            Whether you&apos;re here for a spiritual pilgrimage to the revered Kashi
-                            Vishwanath Temple, to witness the mesmerizing Ganga Aarti, or simply to
-                            explore the timeless charm of Varanasi — our dedicated team ensures every
-                            moment of your stay is nothing short of extraordinary.
+                            Whether you&apos;re here to seek blessings at the revered Kashi Vishwanath Temple, witness the soul-stirring Ganga Aarti at dusk, or simply let Varanasi work its timeless magic — our team is devoted to making every detail of your stay perfect.
                         </motion.p>
 
                         <motion.blockquote

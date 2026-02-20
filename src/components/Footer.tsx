@@ -31,7 +31,7 @@ export default function Footer() {
                             Ready to Experience Varanasi?
                         </h3>
                         <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', marginTop: '0.5rem' }}>
-                            Book your stay at Sri Shyam Villas and create unforgettable memories.
+                            Book directly with us for the best rates, instant confirmation, and a personalised welcome.
                         </p>
                     </div>
                     <a

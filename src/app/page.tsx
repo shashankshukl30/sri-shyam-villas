@@ -12,18 +12,28 @@ import BookingCTA from "@/components/BookingCTA";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      {/* Skip to main content for accessibility */}
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50"
+        style={{ backgroundColor: '#C9A96E', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 700 }}
+      >
+        Skip to main content
+      </a>
       <Navbar />
-      <Hero />
-      <About />
-      <Rooms />
-      <Amenities />
-      <Gallery />
-      <Testimonials />
-      <Location />
-      <Contact />
-      <Footer />
-      <BookingCTA />
-    </main>
+      <main id="main-content" aria-label="Sri Shyam Villas Hotel Website">
+        <Hero />
+        <About />
+        <Rooms />
+        <Amenities />
+        <Gallery />
+        <Testimonials />
+        <Location />
+        <Contact />
+        <Footer />
+        <BookingCTA />
+      </main>
+    </>
   );
 }

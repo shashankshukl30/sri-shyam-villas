@@ -21,7 +21,7 @@ const rooms = [
             { icon: Wifi, label: "Free Wi-Fi" },
             { icon: Wind, label: "AC" },
         ],
-        description: "Elegantly appointed with modern amenities, our Deluxe Room offers the perfect blend of comfort and style for the discerning traveler.",
+        description: "Thoughtfully appointed with plush bedding, warm lighting, and all the modern essentials — our Deluxe Room is your perfect sanctuary after a day of exploring Varanasi's sacred sites.",
     },
     {
         name: "Premium Room",
@@ -36,7 +36,7 @@ const rooms = [
             { icon: Wifi, label: "Free Wi-Fi" },
             { icon: Wind, label: "AC" },
         ],
-        description: "Spacious and thoughtfully designed, our Premium Room features refined interiors with extra space to relax and unwind.",
+        description: "More space, more comfort, more you. Our Premium Room features refined interiors, a larger workspace, and enhanced amenities — ideal for extended stays or the discerning solo traveler.",
     },
     {
         name: "Premium Balcony",
@@ -51,7 +51,7 @@ const rooms = [
             { icon: Wifi, label: "Free Wi-Fi" },
             { icon: Wind, label: "Balcony" },
         ],
-        description: "Wake up to stunning city views from your private balcony. A premium experience with panoramic views of the holy city.",
+        description: "Begin every morning with your coffee and a sweeping view of the holy city from your private balcony. Varanasi's timeless skyline is your personal backdrop — a truly unforgettable experience.",
     },
     {
         name: "Deluxe Twin",
@@ -66,7 +66,7 @@ const rooms = [
             { icon: Wifi, label: "Free Wi-Fi" },
             { icon: Maximize2, label: "180 sq ft" },
         ],
-        description: "Perfect for friends or fellow pilgrims, our spacious Deluxe Twin room offers two comfortable beds with all premium amenities.",
+        description: "Perfect for families, friends, or fellow pilgrims — our spacious Deluxe Twin offers two comfortable beds, generous floor space, and all the amenities you'd expect from a premium stay.",
     },
 ];
 
@@ -95,7 +95,7 @@ export default function Rooms() {
                     </h2>
                     <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
                     <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '1rem' }}>
-                        Each room is a personal sanctuary, designed to make your Varanasi experience truly unforgettable.
+                        Each room is a private retreat — impeccably maintained, thoughtfully furnished, and priced for real value. Book direct for the best rates.
                     </p>
                 </motion.div>
             </div>

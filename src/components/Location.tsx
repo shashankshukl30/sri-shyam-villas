@@ -30,7 +30,7 @@ export default function Location() {
                         </h2>
                         <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
                         <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '1rem' }}>
-                            Perfectly located in Siddhagiribagh, with easy access to Varanasi&apos;s most sacred sites.
+                            Ideally situated in Siddhagiribagh — close enough to Varanasi&apos;s sacred heart, yet peaceful enough to truly rest.
                         </p>
                     </motion.div>
                 </div>
