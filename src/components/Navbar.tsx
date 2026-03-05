@@ -10,7 +10,7 @@ const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Rooms", href: "#rooms" },
-    { name: "Amenities", href: "#amenities" },
+    { name: "Experiences", href: "#experiences" },
     { name: "Gallery", href: "#gallery" },
     { name: "Reviews", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
@@ -40,40 +40,50 @@ export default function Navbar() {
                 style={{
                     position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
                     transition: 'all 0.5s ease',
-                    backgroundColor: scrolled ? 'rgba(26,26,46,0.95)' : 'transparent',
+                    backgroundColor: scrolled ? 'rgba(74,14,26,0.97)' : 'transparent',
                     backdropFilter: scrolled ? 'blur(16px)' : 'none',
-                    boxShadow: scrolled ? '0 4px 30px rgba(0,0,0,0.2)' : 'none',
-                    padding: scrolled ? '0.6rem 0' : '1.25rem 0',
+                    boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.15)' : 'none',
+                    padding: scrolled ? '0.5rem 0' : '0.9rem 0',
+                    borderBottom: scrolled ? '1px solid rgba(197,165,90,0.15)' : 'none',
                 }}
             >
                 <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                    {/* Logo */}
-                    <a href="#home" style={{ zIndex: 10, textDecoration: 'none' }}>
-                        <span style={{ fontFamily: 'var(--font-heading), Georgia, serif', color: 'white', fontSize: '1.75rem', fontWeight: 800 }}>
-                            Sri Shyam
+                    {/* Logo — Single Line */}
+                    <a href="#home" style={{ zIndex: 10, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        <span style={{
+                            fontFamily: 'var(--font-heading), Georgia, serif',
+                            color: 'white', fontSize: '1.35rem', fontWeight: 400,
+                            letterSpacing: '0.04em',
+                        }}>
+                            Sri Shyam Villas
                         </span>
-                        <span style={{ display: 'block', color: '#C9A96E', fontSize: '0.65rem', letterSpacing: '0.4em', textTransform: 'uppercase', marginTop: '-3px', fontWeight: 700 }}>
-                            Villas
+                        <span style={{ fontSize: '1rem', lineHeight: 1 }}>☀</span>
+                        <span style={{
+                            fontFamily: 'var(--font-heading), Georgia, serif',
+                            color: '#C5A55A', fontSize: '1.35rem', fontWeight: 400,
+                            letterSpacing: '0.04em',
+                        }}>
+                            Banaras
                         </span>
                     </a>
 
                     {/* Desktop Links */}
-                    <div className="hidden lg:flex items-center" style={{ gap: '2.5rem' }}>
+                    <div className="hidden lg:flex items-center" style={{ gap: '2rem' }}>
                         {links.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
                                 style={{
-                                    color: 'rgba(255,255,255,0.8)',
-                                    fontSize: '0.85rem',
-                                    fontWeight: 600,
-                                    letterSpacing: '0.12em',
+                                    color: 'rgba(255,255,255,0.75)',
+                                    fontSize: '0.65rem',
+                                    fontWeight: 500,
+                                    letterSpacing: '0.2em',
                                     textTransform: 'uppercase',
                                     textDecoration: 'none',
                                     transition: 'color 0.3s ease',
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A96E')}
-                                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+                                onMouseEnter={(e) => (e.currentTarget.style.color = '#C5A55A')}
+                                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.75)')}
                             >
                                 {link.name}
                             </a>
@@ -81,15 +91,15 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop CTA */}
-                    <div className="hidden lg:flex items-center" style={{ gap: '1rem' }}>
+                    <div className="hidden lg:flex items-center" style={{ gap: '0.75rem' }}>
                         <a
                             href="tel:+917307491291"
                             className="flex items-center"
-                            style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.85rem', gap: '0.5rem', textDecoration: 'none', fontWeight: 500 }}
-                            onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A96E')}
-                            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+                            style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.65rem', gap: '0.35rem', textDecoration: 'none', fontWeight: 500, letterSpacing: '0.1em' }}
+                            onMouseEnter={(e) => (e.currentTarget.style.color = '#C5A55A')}
+                            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
                         >
-                            <Phone size={15} />
+                            <Phone size={12} />
                             <span>Call Us</span>
                         </a>
                         <a
@@ -98,14 +108,14 @@ export default function Navbar() {
                             rel="noopener noreferrer"
                             className="btn-whatsapp-sm"
                         >
-                            <MessageCircle size={15} />
+                            <MessageCircle size={12} />
                             Book Now
                         </a>
                     </div>
 
                     {/* Mobile Toggle */}
                     <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden" style={{ color: 'white', zIndex: 110 }} aria-label="Toggle menu">
-                        {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+                        {mobileOpen ? <X size={22} /> : <Menu size={22} />}
                     </button>
                 </div>
             </motion.nav>
@@ -120,26 +130,26 @@ export default function Navbar() {
                         transition={{ duration: 0.3 }}
                         style={{
                             position: 'fixed', inset: 0, zIndex: 100,
-                            backgroundColor: '#1A1A2E',
+                            backgroundColor: '#4A0E1A',
                             display: 'flex', flexDirection: 'column',
                             alignItems: 'center', justifyContent: 'center',
                         }}
                     >
-                        <div className="flex flex-col items-center" style={{ gap: '2.25rem' }}>
+                        <div className="flex flex-col items-center" style={{ gap: '1.75rem' }}>
                             {links.map((link, i) => (
                                 <motion.a
                                     key={link.name}
                                     href={link.href}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={{ opacity: 0, y: 25 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.05 * i, duration: 0.4 }}
                                     onClick={() => setMobileOpen(false)}
                                     style={{
-                                        color: 'rgba(255,255,255,0.85)', fontSize: '1.75rem',
-                                        fontFamily: 'var(--font-heading), Georgia, serif', fontWeight: 600,
-                                        textDecoration: 'none', letterSpacing: '0.03em',
+                                        color: 'rgba(255,255,255,0.85)', fontSize: '1.3rem',
+                                        fontFamily: 'var(--font-heading), Georgia, serif', fontWeight: 400,
+                                        textDecoration: 'none', letterSpacing: '0.04em',
                                     }}
-                                    onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A96E')}
+                                    onMouseEnter={(e) => (e.currentTarget.style.color = '#C5A55A')}
                                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.85)')}
                                 >
                                     {link.name}
@@ -149,13 +159,13 @@ export default function Navbar() {
                                 href={WHATSAPP_LINK}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 25 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
                                 className="btn-whatsapp"
-                                style={{ marginTop: '1rem' }}
+                                style={{ marginTop: '0.75rem' }}
                             >
-                                <MessageCircle size={20} />
+                                <MessageCircle size={14} />
                                 Book via WhatsApp
                             </motion.a>
                         </div>

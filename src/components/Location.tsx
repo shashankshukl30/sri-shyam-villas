@@ -2,106 +2,111 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, Clock, Navigation } from "lucide-react";
+import { MapPin, Train, Landmark, Waves } from "lucide-react";
 
-const nearbyPlaces = [
-    { name: "Kashi Vishwanath Temple", distance: "2.6 km", time: "~10 min", type: "Temple" },
-    { name: "Dashashwamedh Ghat", distance: "3.2 km", time: "~12 min", type: "Ghat" },
-    { name: "Assi Ghat", distance: "5.0 km", time: "~18 min", type: "Ghat" },
-    { name: "Sarnath (Buddhist Site)", distance: "9.0 km", time: "~30 min", type: "Heritage" },
-    { name: "BHU (Banaras Hindu University)", distance: "5.0 km", time: "~20 min", type: "Landmark" },
-    { name: "Varanasi Junction Station", distance: "2.0 km", time: "~8 min", type: "Transport" },
+const categories = [
+    {
+        title: "Transport", icon: Train, places: [
+            { name: "(BSB) Varanasi Junction", dist: "1.8 km" },
+            { name: "(BSBS) Banaras Railway Station", dist: "2.5 km" },
+        ],
+    },
+    {
+        title: "Sacred Temples", icon: Landmark, places: [
+            { name: "Sri Kashi Vishwanath Jee Temple", dist: "1.5 km" },
+            { name: "Vishalakshi Temple", dist: "1.8 km" },
+            { name: "Kashi Annapurna Devi Temple", dist: "1.5 km" },
+            { name: "Kaal Bhairav Temple", dist: "1.8 km" },
+            { name: "Maha Mrityunjay Mandir", dist: "2.5 km" },
+            { name: "Chintamani Ganesh Temple", dist: "2.4 km" },
+            { name: "Gauri Kedareshwar", dist: "2.5 km" },
+            { name: "Shri Mani Mandir", dist: "2.5 km" },
+            { name: "Tulsi Manas Mandir", dist: "2.8 km" },
+            { name: "Durga Mata Mandir", dist: "2.8 km" },
+            { name: "Sankat Mochan Mandir", dist: "3.5 km" },
+            { name: "BHU Birla Temple", dist: "5 km" },
+        ],
+    },
+    {
+        title: "Ghats & Landmarks", icon: Waves, places: [
+            { name: "Dashashwamedh Ghat", dist: "1 km" },
+            { name: "Dhanwantari Koop", dist: "2.5 km" },
+            { name: "Namo Ghat", dist: "8.5 km" },
+            { name: "Sarnath", dist: "11.1 km" },
+            { name: "Ramnagar", dist: "7.3 km" },
+        ],
+    },
 ];
 
 export default function Location() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "-80px" });
 
     return (
-        <section id="location" className="section-padding relative overflow-hidden" style={{ backgroundColor: 'white' }} ref={ref}>
+        <section id="location" className="section-padding" style={{ backgroundColor: '#FAF6F0' }} ref={ref}>
             <div className="max-w-7xl mx-auto">
-                <div className="text-center" style={{ marginBottom: '4.5rem' }}>
-                    <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
+                <div className="text-center" style={{ marginBottom: '3rem' }}>
+                    <motion.div initial={{ opacity: 0, y: 25 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
                         <span className="section-label" style={{ display: 'block' }}>Location</span>
-                        <h2 className="section-title" style={{ marginTop: '1rem' }}>
+                        <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
                             In the Heart of
-                            <br />
-                            <span style={{ color: '#C9A96E', fontStyle: 'italic', fontWeight: 400 }}>the Holy City</span>
+                            <br /><span style={{ color: '#6B1D2A', fontStyle: 'italic' }}>Sacred Banaras</span>
                         </h2>
-                        <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
-                        <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '1rem' }}>
-                            Ideally situated in Siddhagiribagh — close enough to Varanasi&apos;s sacred heart, yet peaceful enough to truly rest.
+                        <div className="gold-divider" style={{ margin: '1rem auto' }} />
+                        <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '0.5rem' }}>
+                            Ideally situated in Siddhagiribagh — close enough to Banaras&apos;s sacred heart, yet peaceful enough to truly rest.
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="grid lg:grid-cols-5" style={{ gap: '2.5rem' }}>
+                <div className="grid lg:grid-cols-2" style={{ gap: '2rem' }}>
+                    {/* Map */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="lg:col-span-3 overflow-hidden"
-                        style={{ borderRadius: '20px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)', border: '1px solid rgba(232,213,183,0.2)', height: '480px' }}
+                        transition={{ duration: 0.8 }}
+                        className="relative overflow-hidden"
+                        style={{ borderRadius: '4px', minHeight: '400px', border: '1px solid #eee' }}
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.8!2d82.99425!3d25.31116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE4JzQwLjIiTiA4MsKwNTknMzkuMyJF!5e0!3m2!1sen!2sin!4v1&q=Sri+Shyam+Villas+Varanasi"
-                            width="100%" height="100%" style={{ border: 0 }}
-                            allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Sri Shyam Villas Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.813!2d82.9942!3d25.3112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e31e8a7c4e8e5%3A0x1234567890abcdef!2sSri%20Shyam%20Villas!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            width="100%" height="100%"
+                            style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Sri Shyam Villas Location"
                         />
                     </motion.div>
 
+                    {/* Distances */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: 20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        className="lg:col-span-2"
+                        transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div style={{ backgroundColor: '#FDFBF7', borderRadius: '20px', padding: '2rem', border: '1px solid rgba(232,213,183,0.3)' }}>
-                            <div className="flex items-start" style={{ gap: '0.75rem', marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(232,213,183,0.3)' }}>
-                                <MapPin size={20} style={{ color: '#C9A96E', marginTop: '3px', flexShrink: 0 }} />
-                                <div>
-                                    <h3 style={{ color: '#1A1A2E', fontWeight: 700, fontSize: '1rem', marginBottom: '0.4rem' }}>Our Address</h3>
-                                    <p style={{ color: '#6B6B6B', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                                        D.61/3-A, Siddhagiribagh,<br />Jahumandi, Varanasi,<br />Uttar Pradesh 221010
-                                    </p>
-                                </div>
-                            </div>
+                        <div className="flex items-center" style={{ gap: '0.5rem', marginBottom: '1.25rem' }}>
+                            <MapPin size={14} style={{ color: '#6B1D2A' }} />
+                            <span style={{ fontSize: '0.7rem', color: '#888', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 500 }}>Distances from Sri Shyam Villas</span>
+                        </div>
 
-                            <div className="flex items-start" style={{ gap: '0.75rem', marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(232,213,183,0.3)' }}>
-                                <Clock size={20} style={{ color: '#C9A96E', marginTop: '3px', flexShrink: 0 }} />
-                                <div>
-                                    <h3 style={{ color: '#1A1A2E', fontWeight: 700, fontSize: '1rem', marginBottom: '0.4rem' }}>Check-in / Check-out</h3>
-                                    <p style={{ color: '#6B6B6B', fontSize: '0.95rem' }}>
-                                        Check-in: <strong style={{ color: '#2D2D2D' }}>1:00 PM</strong> · Check-out: <strong style={{ color: '#2D2D2D' }}>12:00 PM</strong>
-                                    </p>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            {categories.map((cat) => (
+                                <div key={cat.title}>
+                                    <div className="flex items-center" style={{ gap: '0.35rem', marginBottom: '0.6rem' }}>
+                                        <cat.icon size={12} style={{ color: '#C5A55A' }} />
+                                        <span style={{ fontSize: '0.6rem', fontWeight: 600, color: '#C5A55A', letterSpacing: '0.2em', textTransform: 'uppercase' }}>{cat.title}</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: '0.15rem' }}>
+                                        {cat.places.map((p) => (
+                                            <div key={p.name} className="flex items-center justify-between" style={{ padding: '0.35rem 0', borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
+                                                <span style={{ color: '#555', fontSize: '0.7rem' }}>{p.name}</span>
+                                                <span style={{ color: '#6B1D2A', fontSize: '0.65rem', fontWeight: 600, whiteSpace: 'nowrap', marginLeft: '0.5rem' }}>{p.dist}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-
-                            <h3 className="flex items-center" style={{ color: '#1A1A2E', fontWeight: 700, fontSize: '1rem', gap: '0.5rem', marginBottom: '1.25rem' }}>
-                                <Navigation size={16} style={{ color: '#C9A96E' }} />
-                                Nearby Attractions
-                            </h3>
-                            <div>
-                                {nearbyPlaces.map((place, i) => (
-                                    <motion.div
-                                        key={place.name}
-                                        initial={{ opacity: 0, x: 10 }}
-                                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                        transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
-                                        className="flex items-center justify-between"
-                                        style={{ padding: '0.75rem 0', borderBottom: i < nearbyPlaces.length - 1 ? '1px solid rgba(232,213,183,0.15)' : 'none' }}
-                                    >
-                                        <div>
-                                            <p style={{ color: '#2D2D2D', fontSize: '0.95rem', fontWeight: 600 }}>{place.name}</p>
-                                            <p style={{ color: '#6B6B6B', fontSize: '0.7rem', fontWeight: 500 }}>{place.type}</p>
-                                        </div>
-                                        <div className="text-right">
-                                            <p style={{ color: '#C9A96E', fontSize: '0.95rem', fontWeight: 700 }}>{place.distance}</p>
-                                            <p style={{ color: '#6B6B6B', fontSize: '0.7rem' }}>{place.time}</p>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
+                            ))}
                         </div>
                     </motion.div>
                 </div>

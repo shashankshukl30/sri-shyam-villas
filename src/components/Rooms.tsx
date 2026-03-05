@@ -1,172 +1,124 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { Maximize2, Wifi, Wind, Eye, Users, MessageCircle } from "lucide-react";
-import ImageCarousel from "./ImageCarousel";
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { Maximize2, Users, Wifi, Wind, Eye, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/917307491291?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Sri%20Shyam%20Villas%2C%20Varanasi";
+const WHATSAPP_LINK = "https://wa.me/917307491291";
 
 const rooms = [
     {
-        name: "Deluxe Room",
-        tagline: "Classic Comfort",
-        price: "3,368",
-        images: [
-            { src: "/images/hotel/room-deluxe-1.jpg", alt: "Deluxe Room View 1" },
-            { src: "/images/hotel/room-deluxe-2.jpg", alt: "Deluxe Room View 2" },
-        ],
-        features: [
-            { icon: Maximize2, label: "155 sq ft" },
-            { icon: Wifi, label: "Free Wi-Fi" },
-            { icon: Wind, label: "AC" },
-        ],
-        description: "Thoughtfully appointed with plush bedding, warm lighting, and all the modern essentials — our Deluxe Room is your perfect sanctuary after a day of exploring Varanasi's sacred sites.",
+        name: "Deluxe Room", tagline: "Classic Comfort", price: "3,368",
+        images: [{ src: "/images/hotel/room-deluxe-1.jpg", alt: "Deluxe Room View 1" }, { src: "/images/hotel/room-deluxe-2.jpg", alt: "Deluxe Room View 2" }],
+        features: [{ icon: Maximize2, label: "155 sq ft" }, { icon: Wifi, label: "Free Wi-Fi" }, { icon: Wind, label: "AC" }],
+        description: "Thoughtfully appointed with plush bedding, warm lighting, and all the modern essentials — your perfect sanctuary after a day exploring Banaras.",
     },
     {
-        name: "Premium Room",
-        tagline: "Elevated Stay",
-        price: "4,200",
-        images: [
-            { src: "/images/hotel/room-premium-1.jpg", alt: "Premium Room View 1" },
-            { src: "/images/hotel/room-premium-2.jpg", alt: "Premium Room View 2" },
-        ],
-        features: [
-            { icon: Maximize2, label: "170 sq ft" },
-            { icon: Wifi, label: "Free Wi-Fi" },
-            { icon: Wind, label: "AC" },
-        ],
-        description: "More space, more comfort, more you. Our Premium Room features refined interiors, a larger workspace, and enhanced amenities — ideal for extended stays or the discerning solo traveler.",
+        name: "Premium Room", tagline: "Elevated Stay", price: "4,200",
+        images: [{ src: "/images/hotel/room-premium-1.jpg", alt: "Premium Room View 1" }, { src: "/images/hotel/room-premium-2.jpg", alt: "Premium Room View 2" }],
+        features: [{ icon: Maximize2, label: "170 sq ft" }, { icon: Wifi, label: "Free Wi-Fi" }, { icon: Wind, label: "AC" }],
+        description: "More space, more comfort. Refined interiors, a larger workspace, and enhanced amenities — ideal for extended stays or the discerning traveller.",
     },
     {
-        name: "Premium Balcony",
-        tagline: "Room with a View",
-        price: "4,800",
-        images: [
-            { src: "/images/hotel/room-balcony-1.jpg", alt: "Premium Balcony View 1" },
-            { src: "/images/hotel/room-balcony-2.jpg", alt: "Premium Balcony View 2" },
-        ],
-        features: [
-            { icon: Eye, label: "City View" },
-            { icon: Wifi, label: "Free Wi-Fi" },
-            { icon: Wind, label: "Balcony" },
-        ],
-        description: "Begin every morning with your coffee and a sweeping view of the holy city from your private balcony. Varanasi's timeless skyline is your personal backdrop — a truly unforgettable experience.",
+        name: "Premium Balcony", tagline: "Room with a View", price: "4,800",
+        images: [{ src: "/images/hotel/room-balcony-1.jpg", alt: "Premium Balcony View 1" }, { src: "/images/hotel/room-balcony-2.jpg", alt: "Premium Balcony View 2" }],
+        features: [{ icon: Eye, label: "City View" }, { icon: Wifi, label: "Free Wi-Fi" }, { icon: Wind, label: "Balcony" }],
+        description: "Begin every morning with your coffee and a sweeping view of the holy city from your private balcony — a truly unforgettable experience.",
     },
     {
-        name: "Deluxe Twin",
-        tagline: "Shared Comfort",
-        price: "3,800",
-        images: [
-            { src: "/images/hotel/room-twin-1.jpg", alt: "Deluxe Twin View 1" },
-            { src: "/images/hotel/room-twin-2.jpg", alt: "Deluxe Twin View 2" },
-        ],
-        features: [
-            { icon: Users, label: "Twin Beds" },
-            { icon: Wifi, label: "Free Wi-Fi" },
-            { icon: Maximize2, label: "180 sq ft" },
-        ],
-        description: "Perfect for families, friends, or fellow pilgrims — our spacious Deluxe Twin offers two comfortable beds, generous floor space, and all the amenities you'd expect from a premium stay.",
+        name: "Deluxe Twin", tagline: "Shared Comfort", price: "3,800",
+        images: [{ src: "/images/hotel/room-twin-1.jpg", alt: "Deluxe Twin View 1" }, { src: "/images/hotel/room-twin-2.jpg", alt: "Deluxe Twin View 2" }],
+        features: [{ icon: Users, label: "Twin Beds" }, { icon: Wifi, label: "Free Wi-Fi" }, { icon: Maximize2, label: "180 sq ft" }],
+        description: "Perfect for families, friends, or fellow pilgrims — two comfortable beds, generous floor space, and all the amenities you'd expect.",
     },
 ];
 
+function RoomCarousel({ images }: { images: { src: string; alt: string }[] }) {
+    const [idx, setIdx] = useState(0);
+    return (
+        <div className="relative overflow-hidden" style={{ height: '200px', borderRadius: '4px 4px 0 0' }}>
+            <AnimatePresence mode="wait">
+                <motion.img key={idx} src={images[idx].src} alt={images[idx].alt}
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}
+                    className="w-full h-full absolute inset-0" style={{ objectFit: 'cover' }} />
+            </AnimatePresence>
+            {images.length > 1 && (
+                <>
+                    <button onClick={() => setIdx(p => (p - 1 + images.length) % images.length)}
+                        className="absolute" style={{ top: '50%', left: '0.5rem', transform: 'translateY(-50%)', color: 'white', zIndex: 5, opacity: 0.6 }}><ChevronLeft size={16} /></button>
+                    <button onClick={() => setIdx(p => (p + 1) % images.length)}
+                        className="absolute" style={{ top: '50%', right: '0.5rem', transform: 'translateY(-50%)', color: 'white', zIndex: 5, opacity: 0.6 }}><ChevronRight size={16} /></button>
+                </>
+            )}
+        </div>
+    );
+}
+
 export default function Rooms() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "-80px" });
 
     return (
-        <section
-            id="rooms"
-            className="section-padding relative overflow-hidden"
-            style={{ background: 'linear-gradient(180deg, #FDFBF7 0%, #FFFFFF 50%, #FDFBF7 100%)' }}
-            ref={ref}
-        >
-            <div className="max-w-7xl mx-auto text-center" style={{ marginBottom: '4.5rem' }}>
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8 }}
-                >
-                    <span className="section-label" style={{ display: 'block', textAlign: 'center' }}>Accommodations</span>
-                    <h2 className="section-title" style={{ marginTop: '1rem' }}>
-                        Thoughtfully Designed
-                        <br />
-                        <span style={{ color: '#C9A96E', fontStyle: 'italic', fontWeight: 400 }}>for Your Comfort</span>
-                    </h2>
-                    <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
-                    <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '1rem' }}>
-                        Each room is a private retreat — impeccably maintained, thoughtfully furnished, and priced for real value. Book direct for the best rates.
-                    </p>
-                </motion.div>
-            </div>
-
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2" style={{ gap: '2.5rem' }}>
-                {rooms.map((room, i) => (
-                    <motion.div
-                        key={room.name}
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.7, delay: i * 0.15 }}
-                        className="group relative overflow-hidden"
-                        style={{
-                            backgroundColor: 'white', borderRadius: '20px',
-                            boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-                            border: '1px solid rgba(232,213,183,0.25)',
-                            transition: 'all 0.6s ease',
-                        }}
-                    >
-                        <div className="relative overflow-hidden" style={{ height: '320px' }}>
-                            <ImageCarousel
-                                images={room.images}
-                                interval={5000 + i * 1000} // Staggered timing for natural feel
-                                className="transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.7), transparent 50%)', pointerEvents: 'none', zIndex: 10 }} />
-
-                            <div className="absolute" style={{ top: '1.25rem', right: '1.25rem', backgroundColor: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', borderRadius: '12px', padding: '0.6rem 1.25rem', boxShadow: '0 4px 16px rgba(0,0,0,0.1)', zIndex: 20 }}>
-                                <span style={{ display: 'block', fontSize: '0.6rem', color: '#6B6B6B', lineHeight: 1 }}>from</span>
-                                <span style={{ display: 'block', color: '#1A1A2E', fontWeight: 800, fontSize: '1.4rem', fontFamily: 'var(--font-heading), Georgia, serif' }}>
-                                    ₹{room.price}
-                                </span>
-                                <span style={{ fontSize: '0.55rem', color: '#6B6B6B' }}>/night</span>
-                            </div>
-
-                            <div className="absolute" style={{ bottom: '1.25rem', left: '1.25rem', zIndex: 20 }}>
-                                <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600 }}>
-                                    {room.tagline}
-                                </span>
-                                <h3 style={{ color: 'white', fontSize: '1.75rem', fontWeight: 800, fontFamily: 'var(--font-heading), Georgia, serif' }}>
-                                    {room.name}
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div style={{ padding: '2rem' }}>
-                            <p style={{ color: '#6B6B6B', fontSize: '1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                                {room.description}
-                            </p>
-
-                            <div className="flex flex-wrap" style={{ gap: '1.25rem', marginBottom: '1.75rem' }}>
-                                {room.features.map((f, j) => (
-                                    <div key={j} className="flex items-center" style={{ gap: '0.5rem', color: '#6B6B6B' }}>
-                                        <f.icon size={15} style={{ color: '#C9A96E' }} />
-                                        <span style={{ fontSize: '0.85rem', fontWeight: 500 }}>{f.label}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <a
-                                href={`${WHATSAPP_LINK}%20-%20${encodeURIComponent(room.name)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-whatsapp-sm"
-                            >
-                                <MessageCircle size={15} />
-                                Book on WhatsApp
-                            </a>
-                        </div>
+        <section id="rooms" className="section-padding" style={{ backgroundColor: 'white' }} ref={ref}>
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center" style={{ marginBottom: '3rem' }}>
+                    <motion.div initial={{ opacity: 0, y: 25 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
+                        <span className="section-label" style={{ display: 'block' }}>Rooms & Suites</span>
+                        <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
+                            Your Private
+                            <br /><span style={{ color: '#6B1D2A', fontStyle: 'italic' }}>Retreat Awaits</span>
+                        </h2>
+                        <div className="gold-divider" style={{ margin: '1rem auto' }} />
+                        <p className="section-subtitle" style={{ margin: '0 auto', marginTop: '0.5rem' }}>
+                            Each room is impeccably maintained, thoughtfully furnished, and priced for real value. Book direct for the best rates.
+                        </p>
                     </motion.div>
-                ))}
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4" style={{ gap: '1.25rem' }}>
+                    {rooms.map((room, i) => (
+                        <motion.div
+                            key={room.name}
+                            initial={{ opacity: 0, y: 25 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6, delay: i * 0.1 }}
+                            className="group"
+                            style={{
+                                border: '1px solid #eee',
+                                borderRadius: '4px',
+                                overflow: 'hidden',
+                                transition: 'box-shadow 0.4s ease',
+                            }}
+                        >
+                            <RoomCarousel images={room.images} />
+                            <div style={{ padding: '1rem' }}>
+                                <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
+                                    <span style={{ color: '#C5A55A', fontSize: '0.5rem', letterSpacing: '0.25em', textTransform: 'uppercase', fontWeight: 600 }}>{room.tagline}</span>
+                                    <span style={{ color: '#6B1D2A', fontSize: '0.65rem', fontWeight: 600 }}>₹{room.price}<span style={{ color: '#999', fontWeight: 400, fontSize: '0.5rem' }}>/night</span></span>
+                                </div>
+                                <h3 style={{ fontSize: '1rem', fontWeight: 400, fontFamily: 'var(--font-heading), Georgia, serif', color: '#1C1C1C', marginBottom: '0.4rem' }}>{room.name}</h3>
+                                <div className="flex flex-wrap" style={{ gap: '0.6rem', marginBottom: '0.6rem' }}>
+                                    {room.features.map(f => (
+                                        <div key={f.label} className="flex items-center" style={{ gap: '0.25rem' }}>
+                                            <f.icon size={11} style={{ color: '#999' }} />
+                                            <span style={{ color: '#888', fontSize: '0.6rem' }}>{f.label}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <p style={{ color: '#888', fontSize: '0.7rem', lineHeight: 1.55, marginBottom: '0.75rem' }}>{room.description}</p>
+                                <a
+                                    href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`Hi, I'd like to book the ${room.name} (₹${room.price}/night) at Sri Shyam Villas.`)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    className="btn-whatsapp-sm"
+                                    style={{ width: '100%', justifyContent: 'center' }}
+                                >
+                                    <MessageCircle size={12} />
+                                    Book on WhatsApp
+                                </a>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

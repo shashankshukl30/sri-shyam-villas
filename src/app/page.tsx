@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Rooms from "@/components/Rooms";
 import Amenities from "@/components/Amenities";
+import Experiences from "@/components/Experiences";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Location from "@/components/Location";
@@ -13,11 +14,10 @@ import BookingCTA from "@/components/BookingCTA";
 export default function Home() {
   return (
     <>
-      {/* Skip to main content for accessibility */}
       <a
         href="#home"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50"
-        style={{ backgroundColor: '#C9A96E', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 700 }}
+        style={{ backgroundColor: '#6B1D2A', color: 'white', padding: '0.5rem 1rem', borderRadius: '2px', fontWeight: 600 }}
       >
         Skip to main content
       </a>
@@ -27,6 +27,7 @@ export default function Home() {
         <About />
         <Rooms />
         <Amenities />
+        <Experiences />
         <Gallery />
         <Testimonials />
         <Location />

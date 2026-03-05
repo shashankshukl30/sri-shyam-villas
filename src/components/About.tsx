@@ -2,222 +2,120 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Gem, MapPin, Heart, Shield } from "lucide-react";
-import ImageCarousel from "./ImageCarousel";
+import { Shield, Heart, Sparkles, MapPin, Star, Clock } from "lucide-react";
 
 const usps = [
-    {
-        icon: MapPin,
-        title: "Prime Location",
-        desc: "Minutes from Kashi Vishwanath Temple & the sacred Ganges ghats",
-    },
-    {
-        icon: Heart,
-        title: "Warm Hospitality",
-        desc: "Rated 4.4/5 for exceptional staff courtesy and personalized care",
-    },
-    {
-        icon: Gem,
-        title: "Modern Elegance",
-        desc: "Newly built property with contemporary design and traditional charm",
-    },
-    {
-        icon: Shield,
-        title: "Complete Comfort",
-        desc: "24/7 service, power backup, free Wi-Fi, and premium amenities",
-    },
+    { icon: Shield, title: "Trusted Hospitality", desc: "Warm, attentive service that makes you feel at home." },
+    { icon: MapPin, title: "Prime Location", desc: "1.5 km from Kashi Vishwanath, 1 km from Dashashwamedh Ghat." },
+    { icon: Sparkles, title: "Thoughtful Details", desc: "Premium linens, curated amenities, and a personal touch." },
+    { icon: Clock, title: "Temple Assistance", desc: "We help you plan darshan, pooja, and ghat visits." },
+    { icon: Heart, title: "Family-Friendly", desc: "Spacious rooms, safe environment, and warm meals." },
+    { icon: Star, title: "Value for Money", desc: "Premium experience at honest prices. Book direct for best rates." },
 ];
 
 export default function About() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "-80px" });
 
     return (
-        <section id="about" className="section-padding relative overflow-hidden" style={{ backgroundColor: 'white' }} ref={ref}>
-            {/* Background decoration */}
-            <div
-                className="absolute rounded-full"
-                style={{
-                    top: 0, right: 0, width: '384px', height: '384px',
-                    background: 'linear-gradient(to bottom-left, rgba(201,169,110,0.05), transparent)',
-                    transform: 'translate(50%, -50%)',
-                }}
-            />
+        <section id="about" className="section-padding" style={{ backgroundColor: '#FAF6F0' }} ref={ref}>
+            <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 items-center" style={{ gap: '4rem' }}>
+                    {/* Image */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8 }}
+                        className="relative"
+                    >
+                        <div className="relative overflow-hidden" style={{ borderRadius: '4px' }}>
+                            <img
+                                src="/images/hotel/about-1.jpg"
+                                alt="Sri Shyam Villas Interior"
+                                className="w-full"
+                                style={{ objectFit: 'cover', height: '420px' }}
+                            />
+                        </div>
+                        <div className="absolute overflow-hidden" style={{ bottom: '-1.5rem', right: '-1rem', width: '55%', borderRadius: '4px', border: '4px solid #FAF6F0' }}>
+                            <img
+                                src="/images/hotel/about-3.jpg"
+                                alt="Hotel Ambiance"
+                                className="w-full"
+                                style={{ objectFit: 'cover', height: '200px' }}
+                                loading="lazy"
+                            />
+                        </div>
+                    </motion.div>
 
-            <div className="max-w-7xl mx-auto relative">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-                    {/* Left: Text Content */}
+                    {/* Text */}
                     <div>
-                        <motion.div
-                            initial={{ opacity: 0, x: -40 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                        >
-                            <span className="section-label">Our Story</span>
-                            <h2 className="section-title" style={{ marginTop: '1rem' }}>
-                                A Sanctuary of Peace
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
+                            <span className="section-label" style={{ display: 'block' }}>About Us</span>
+                            <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
+                                A Warm Welcome
                                 <br />
-                                <span style={{ color: '#C9A96E', fontStyle: 'italic', fontWeight: 400 }}>in the Holy City</span>
+                                <span style={{ color: '#6B1D2A', fontStyle: 'italic' }}>In the Heart of Kashi</span>
                             </h2>
                             <div className="gold-divider" />
                         </motion.div>
 
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 15 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            style={{ color: '#6B6B6B', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}
+                            style={{ color: '#5A5A5A', fontSize: '0.85rem', lineHeight: 1.75, marginBottom: '1rem' }}
                         >
                             Nestled in the quiet lanes of Siddhagiribagh, Sri Shyam Villas was born from a simple belief — that every guest deserves to feel at home in one of the world&apos;s most extraordinary cities. Our boutique property blends the warmth of Indian hospitality with the elegance of modern design.
                         </motion.p>
 
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 15 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            style={{ color: '#6B6B6B', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem' }}
+                            style={{ color: '#5A5A5A', fontSize: '0.85rem', lineHeight: 1.75, marginBottom: '1.5rem' }}
                         >
-                            Whether you&apos;re here to seek blessings at the revered Kashi Vishwanath Temple, witness the soul-stirring Ganga Aarti at dusk, or simply let Varanasi work its timeless magic — our team is devoted to making every detail of your stay perfect.
+                            Whether you&apos;re here to seek blessings at the revered Kashi Vishwanath Temple, witness the soul-stirring Ganga Aarti at dusk, or simply let Banaras work its timeless magic — our team is devoted to making every detail of your stay perfect.
                         </motion.p>
 
                         <motion.blockquote
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.8, delay: 0.4 }}
+                            initial={{ opacity: 0, x: 15 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                            transition={{ duration: 0.7, delay: 0.4 }}
                             style={{
-                                borderLeft: '2px solid #C9A96E',
-                                paddingLeft: '1.5rem',
-                                fontStyle: 'italic',
-                                color: '#2D2D2D',
-                                fontSize: '1.15rem',
+                                borderLeft: '2px solid #C5A55A',
+                                paddingLeft: '1rem',
                                 fontFamily: 'var(--font-accent), Georgia, serif',
+                                color: '#6B1D2A',
+                                fontStyle: 'italic',
+                                fontSize: '1rem',
+                                lineHeight: 1.6,
                             }}
                         >
-                            &ldquo;The best hospitality I&apos;ve experienced in Varanasi. The staff goes above
-                            and beyond to make you feel at home.&rdquo;
-                            <span
-                                style={{
-                                    display: 'block',
-                                    color: '#C9A96E',
-                                    fontSize: '0.85rem',
-                                    marginTop: '0.5rem',
-                                    fontStyle: 'normal',
-                                    fontFamily: 'var(--font-body), system-ui, sans-serif',
-                                }}
-                            >
-                                — Guest Review, MakeMyTrip
-                            </span>
+                            &ldquo;Where every guest becomes family, and every stay becomes a cherished memory.&rdquo;
                         </motion.blockquote>
-                    </div>
-
-                    {/* Right: Image Collage */}
-                    <div className="relative">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                            className="relative"
-                        >
-                            {/* Main image carousel */}
-                            <div className="relative overflow-hidden" style={{ borderRadius: '16px', boxShadow: '0 25px 60px rgba(0,0,0,0.1)', aspectRatio: '4/5' }}>
-                                <ImageCarousel images={[
-                                    { src: "/images/hotel/about-1.jpg", alt: "Sri Shyam Villas - Our Story 1" },
-                                    { src: "/images/hotel/about-2.jpg", alt: "Sri Shyam Villas - Our Story 2" },
-                                    { src: "/images/hotel/about-3.jpg", alt: "Sri Shyam Villas - Our Story 3" },
-                                ]} interval={4000} />
-                                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.3), transparent)' }} />
-                            </div>
-
-                            {/* Floating accent image */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.8, delay: 0.6 }}
-                                className="absolute overflow-hidden"
-                                style={{
-                                    bottom: '-2rem',
-                                    left: '-2rem',
-                                    width: 'clamp(140px, 20vw, 208px)',
-                                    height: 'clamp(140px, 20vw, 208px)',
-                                    borderRadius: '12px',
-                                    border: '4px solid white',
-                                    boxShadow: '0 15px 40px rgba(0,0,0,0.15)',
-                                }}
-                            >
-                                <img
-                                    src="/images/hotel/hero-3.jpg"
-                                    alt="Varanasi Hotel Detail"
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                />
-                            </motion.div>
-
-                            {/* Rating Badge */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0 }}
-                                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                                transition={{ duration: 0.6, delay: 0.8, type: "spring" }}
-                                className="absolute flex flex-col items-center justify-center"
-                                style={{
-                                    top: '-1rem',
-                                    right: '-1rem',
-                                    width: '96px',
-                                    height: '96px',
-                                    borderRadius: '50%',
-                                    backgroundColor: '#C9A96E',
-                                    color: 'white',
-                                    boxShadow: '0 10px 30px rgba(201,169,110,0.4)',
-                                }}
-                            >
-                                <span style={{ fontSize: '1.75rem', fontWeight: 700, fontFamily: 'var(--font-heading), Georgia, serif' }}>4.4</span>
-                                <span style={{ fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Rating</span>
-                            </motion.div>
-                        </motion.div>
                     </div>
                 </div>
 
-                {/* USP Cards */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginTop: '6rem' }}>
+                {/* USP Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3" style={{ gap: '1rem', marginTop: '4rem' }}>
                     {usps.map((usp, i) => (
                         <motion.div
                             key={usp.title}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
-                            className="group"
+                            transition={{ duration: 0.6, delay: 0.5 + i * 0.08 }}
                             style={{
-                                padding: '1.5rem',
-                                borderRadius: '12px',
-                                border: '1px solid rgba(232,213,183,0.4)',
-                                backgroundColor: '#FDFBF7',
-                                transition: 'all 0.5s ease',
-                                cursor: 'default',
+                                padding: '1.25rem',
+                                border: '1px solid rgba(107,29,42,0.08)',
+                                borderRadius: '4px',
+                                transition: 'border-color 0.3s ease',
                             }}
-                            whileHover={{ y: -4, boxShadow: '0 15px 40px rgba(201,169,110,0.08)' }}
                         >
-                            <div
-                                className="flex items-center justify-center"
-                                style={{
-                                    width: '48px',
-                                    height: '48px',
-                                    borderRadius: '8px',
-                                    backgroundColor: 'rgba(201,169,110,0.1)',
-                                    marginBottom: '1rem',
-                                }}
-                            >
-                                <usp.icon size={22} style={{ color: '#C9A96E' }} />
-                            </div>
-                            <h3
-                                style={{
-                                    color: '#1A1A2E',
-                                    fontSize: '1.1rem',
-                                    fontWeight: 600,
-                                    marginBottom: '0.5rem',
-                                    fontFamily: 'var(--font-heading), Georgia, serif',
-                                }}
-                            >
+                            <usp.icon size={18} style={{ color: '#6B1D2A', marginBottom: '0.6rem' }} />
+                            <h4 style={{ fontSize: '0.8rem', fontWeight: 500, color: '#1C1C1C', marginBottom: '0.3rem', fontFamily: 'var(--font-heading), Georgia, serif' }}>
                                 {usp.title}
-                            </h3>
-                            <p style={{ color: '#6B6B6B', fontSize: '0.85rem', lineHeight: 1.6 }}>{usp.desc}</p>
+                            </h4>
+                            <p style={{ color: '#888', fontSize: '0.72rem', lineHeight: 1.55 }}>{usp.desc}</p>
                         </motion.div>
                     ))}
                 </div>
