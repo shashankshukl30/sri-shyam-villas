@@ -103,7 +103,7 @@ export default function Contact() {
                                     <div><label className="form-label">Phone</label><input type="tel" required value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="form-input" placeholder="+91 XXXXX XXXXX" /></div>
                                 </div>
                                 <div><label className="form-label">Email</label><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} className="form-input" placeholder="your@email.com" /></div>
-                                <div className="grid grid-cols-2 sm:grid-cols-4" style={{ gap: '0.6rem' }}>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: '0.6rem' }}>
                                     <div><label className="form-label">Check-in</label><input type="date" value={form.checkIn} onChange={e => setForm({ ...form, checkIn: e.target.value })} className="form-input" /></div>
                                     <div><label className="form-label">Check-out</label><input type="date" value={form.checkOut} onChange={e => setForm({ ...form, checkOut: e.target.value })} className="form-input" /></div>
                                     <div><label className="form-label">Guests</label>

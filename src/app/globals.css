@@ -356,6 +356,9 @@ h6 {
 /* ===== FORM INPUTS ===== */
 .form-input {
   width: 100%;
+  min-width: 0;
+  -webkit-appearance: none;
+  appearance: none;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
@@ -366,6 +369,15 @@ h6 {
   font-weight: 500;
   outline: none;
   transition: border-color 0.3s ease;
+}
+
+input[type="date"].form-input {
+  min-height: 42px;
+}
+
+input[type="date"].form-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.5;
 }
 
 .form-input:focus {

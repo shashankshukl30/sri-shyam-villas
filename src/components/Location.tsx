@@ -69,7 +69,7 @@ export default function Location() {
                         style={{ borderRadius: '4px', minHeight: '400px', border: '1px solid #eee' }}
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14427.683407981313!2d82.9866164!3d25.3068595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2df80ae798a3%3A0xf6956276805d7b5!2sSri%20Shyam%20Villas!5e0!3m2!1sen!2sin!4v1709647248102!5m2!1sen!2sin"
+                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Sri%20Shyam%20Villas,%20Siddhagiribagh,%20Varanasi+(Sri%20Shyam%20Villas)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                             width="100%" height="100%"
                             style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
                             allowFullScreen
