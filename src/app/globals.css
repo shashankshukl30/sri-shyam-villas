@@ -3,7 +3,6 @@
 /* ===== BASE — Taj-Inspired Premium ===== */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -11,11 +10,9 @@ body {
   background-color: #FAF6F0;
   color: #2D2D2D;
   line-height: 1.65;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.95rem;
-  overscroll-behavior: contain;
 }
 
 h1,

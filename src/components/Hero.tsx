@@ -73,7 +73,7 @@ export default function Hero() {
 
             {/* ── Main Content ── */}
             <div className="relative max-w-7xl mx-auto px-6 flex flex-col justify-center" style={{ zIndex: 10, minHeight: '100vh', paddingTop: '7rem', paddingBottom: '3rem' }}>
-                <div className="flex-1 flex flex-col justify-center items-center text-center" style={{ maxWidth: '820px', margin: '0 auto', borderRadius: '16px', padding: '2rem 1.5rem', backgroundColor: 'rgba(20,6,10,0.35)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', border: '1px solid rgba(197,165,90,0.08)' }}>
+                <div className="flex-1 flex flex-col justify-center items-center text-center" style={{ maxWidth: '820px', margin: '0 auto' }}>
                     {/* Pre-title */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ export default function Hero() {
                             marginBottom: '1.25rem',
                             fontSize: 'clamp(2.2rem, 5.5vw, 4.2rem)',
                             letterSpacing: '0.02em',
-                            textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)',
+                            textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 8px 60px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.5)',
                         }}
                     >
                         Where Spirituality
@@ -112,7 +112,7 @@ export default function Hero() {
                         <span style={{
                             fontStyle: 'italic', fontWeight: 400,
                             color: '#C5A55A',
-                            textShadow: '0 2px 15px rgba(197,165,90,0.4)',
+                            textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.8)',
                         }}>
                             Meets Serenity
                         </span>
@@ -124,11 +124,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
                         style={{
-                            color: 'rgba(255,255,255,0.75)',
+                            color: 'rgba(255,255,255,0.85)',
                             fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                             maxWidth: '520px', marginBottom: '2rem',
-                            fontWeight: 400, lineHeight: 1.75,
-                            textShadow: '0 1px 10px rgba(0,0,0,0.3)',
+                            fontWeight: 500, lineHeight: 1.75,
+                            textShadow: '0 2px 15px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.5)',
                         }}
                     >
                         A refined retreat near the sacred Kashi Vishwanath Temple,
@@ -174,7 +174,7 @@ export default function Hero() {
                         padding: '1.25rem 1.5rem',
                     }}
                 >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-end" style={{ gap: '0.75rem' }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-end" style={{ gap: '1rem' }}>
                         {/* Check-in */}
                         <div>
                             <label className="form-label"><Calendar size={10} style={{ display: 'inline', marginRight: '4px' }} />Check-in</label>
@@ -246,26 +246,6 @@ export default function Hero() {
                 ))}
             </div>
 
-            {/* Scroll indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2 }}
-                className="absolute flex justify-center"
-                style={{ bottom: '2.5rem', left: 0, right: 0, zIndex: 15 }}
-            >
-                <motion.a
-                    href="#about"
-                    animate={{ y: [0, 6, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex flex-col items-center" style={{ gap: '0.25rem', cursor: 'pointer', textDecoration: 'none' }}
-                >
-                    <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.55rem', letterSpacing: '0.35em', textTransform: 'uppercase', fontWeight: 700, textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
-                        Discover More
-                    </span>
-                    <ChevronDown size={14} style={{ color: '#C5A55A', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.8))' }} />
-                </motion.a>
-            </motion.div>
         </section>
     );
 }

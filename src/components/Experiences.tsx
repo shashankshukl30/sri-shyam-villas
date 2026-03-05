@@ -123,7 +123,7 @@ function ExperienceForm({ exp }: { exp: typeof experiences[0] }) {
                 if (currentRow.length > 0) rows.push(currentRow);
 
                 return rows.map((row, ri) => (
-                    <div key={ri} className={row.length === 2 ? "grid grid-cols-2" : ""} style={{ gap: '0.5rem' }}>
+                    <div key={ri} className={row.length === 2 ? "grid grid-cols-1 sm:grid-cols-2" : ""} style={{ gap: '0.6rem' }}>
                         {row.map((field) => (
                             <div key={field.name}>
                                 <label className="form-label">{field.label}</label>
