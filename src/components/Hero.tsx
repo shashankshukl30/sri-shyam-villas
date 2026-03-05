@@ -99,11 +99,12 @@ export default function Hero() {
                         style={{
                             color: 'white',
                             fontFamily: 'var(--font-heading), Georgia, serif',
-                            fontWeight: 300,
+                            fontWeight: 700,
                             lineHeight: 1.15,
-                            marginBottom: '1rem',
-                            fontSize: 'clamp(2rem, 5vw, 3.8rem)',
+                            marginBottom: '1.25rem',
+                            fontSize: 'clamp(2.2rem, 5.5vw, 4.2rem)',
                             letterSpacing: '0.02em',
+                            textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)',
                         }}
                     >
                         Where Spirituality
@@ -111,6 +112,7 @@ export default function Hero() {
                         <span style={{
                             fontStyle: 'italic', fontWeight: 400,
                             color: '#C5A55A',
+                            textShadow: '0 2px 15px rgba(197,165,90,0.4)',
                         }}>
                             Meets Serenity
                         </span>
@@ -122,10 +124,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
                         style={{
-                            color: 'rgba(255,255,255,0.6)',
-                            fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)',
+                            color: 'rgba(255,255,255,0.75)',
+                            fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                             maxWidth: '520px', marginBottom: '2rem',
-                            fontWeight: 400, lineHeight: 1.7,
+                            fontWeight: 400, lineHeight: 1.75,
+                            textShadow: '0 1px 10px rgba(0,0,0,0.3)',
                         }}
                     >
                         A refined retreat near the sacred Kashi Vishwanath Temple,

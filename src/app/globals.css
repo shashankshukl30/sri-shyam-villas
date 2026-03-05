@@ -14,33 +14,66 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading), Georgia, serif;
   color: #1C1C1C;
   line-height: 1.15;
   letter-spacing: 0.01em;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* ===== SCROLLBAR ===== */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #FAF6F0; }
-::-webkit-scrollbar-thumb { background: #C5A55A; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #A88B3E; }
-::selection { background: #6B1D2A; color: white; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A55A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A88B3E;
+}
+
+::selection {
+  background: #6B1D2A;
+  color: white;
+}
 
 /* ===== SECTION UTILITIES ===== */
-.section-padding { padding: 5rem 1.5rem; }
-@media (min-width: 768px) { .section-padding { padding: 6rem 3rem; } }
-@media (min-width: 1280px) { .section-padding { padding: 7rem 5rem; } }
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding: 7rem 5rem;
+  }
+}
 
 .section-label {
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: #C5A55A;
@@ -60,15 +93,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   margin-bottom: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: 0.01em;
 }
 
 .section-subtitle {
-  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
   color: #6B6B6B;
   max-width: 560px;
   line-height: 1.75;
@@ -88,51 +121,59 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.65rem 1.5rem;
+  padding: 0.7rem 1.6rem;
   background: linear-gradient(170deg, #7D2535 0%, #6B1D2A 40%, #5A1622 100%);
   color: white;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(107,29,42,0.25);
+  box-shadow: 0 2px 8px rgba(107, 29, 42, 0.25);
 }
 
 .btn-primary::before {
   content: '';
   position: absolute;
-  top: 0; left: -100%; width: 100%; height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent);
   transition: left 0.5s ease;
 }
 
 .btn-primary::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
   pointer-events: none;
 }
 
 .btn-primary:hover {
   background: linear-gradient(170deg, #8E2D40 0%, #7D2535 40%, #6B1D2A 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(107,29,42,0.35);
+  box-shadow: 0 4px 16px rgba(107, 29, 42, 0.35);
 }
 
-.btn-primary:hover::before { left: 100%; }
+.btn-primary:hover::before {
+  left: 100%;
+}
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(107,29,42,0.2);
+  box-shadow: 0 1px 4px rgba(107, 29, 42, 0.2);
 }
 
 .btn-outline {
@@ -140,15 +181,15 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.6rem 1.5rem;
+  padding: 0.65rem 1.6rem;
   background: transparent;
   color: white;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.35s ease;
@@ -162,7 +203,9 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-.btn-outline:active { transform: translateY(0); }
+.btn-outline:active {
+  transform: translateY(0);
+}
 
 /* ===== WHATSAPP BUTTON ===== */
 .btn-whatsapp {
@@ -170,12 +213,12 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.5rem;
   background: linear-gradient(170deg, #34E878 0%, #25D366 40%, #1EB954 100%);
   color: white;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   border: none;
   border-radius: 2px;
@@ -184,35 +227,40 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(37,211,102,0.3);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
 }
 
 .btn-whatsapp::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.12), transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent);
   pointer-events: none;
 }
 
 .btn-whatsapp:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
 }
 
-.btn-whatsapp:active { transform: translateY(0); }
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
 
 /* ===== WHATSAPP SMALL ===== */
 .btn-whatsapp-sm {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.5rem 1.1rem;
+  padding: 0.55rem 1.2rem;
   background: linear-gradient(170deg, #34E878 0%, #25D366 40%, #1EB954 100%);
   color: white;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: none;
@@ -222,23 +270,28 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(37,211,102,0.25);
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.25);
 }
 
 .btn-whatsapp-sm::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
   pointer-events: none;
 }
 
 .btn-whatsapp-sm:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37,211,102,0.35);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
 }
 
-.btn-whatsapp-sm:active { transform: translateY(0); }
+.btn-whatsapp-sm:active {
+  transform: translateY(0);
+}
 
 /* ===== BURGUNDY BUTTON ===== */
 .btn-burgundy {
@@ -246,15 +299,15 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.55rem 1.3rem;
+  padding: 0.6rem 1.4rem;
   background: #6B1D2A;
   color: white;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -264,16 +317,26 @@ h1, h2, h3, h4, h5, h6 {
 .btn-burgundy:hover {
   background: #7D2535;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(107,29,42,0.3);
+  box-shadow: 0 4px 12px rgba(107, 29, 42, 0.3);
 }
 
-.btn-burgundy:active { transform: translateY(0); }
+.btn-burgundy:active {
+  transform: translateY(0);
+}
 
 /* ===== IMAGE SHIMMER ===== */
 @keyframes shimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .img-shimmer {
@@ -285,13 +348,14 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== FORM INPUTS ===== */
 .form-input {
   width: 100%;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 2px;
-  padding: 0.6rem 0.9rem;
+  padding: 0.65rem 0.9rem;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -301,15 +365,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-input::placeholder {
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .form-label {
   display: block;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.4rem;
 }
