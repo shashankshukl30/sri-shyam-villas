@@ -57,7 +57,7 @@ export default function Navbar() {
                         }}>
                             Sri Shyam Villas
                         </span>
-                        <span style={{ fontSize: '1rem', lineHeight: 1 }}>☀</span>
+                        <span style={{ fontSize: '1rem', lineHeight: 1, color: '#C5A55A' }}>☀</span>
                         <span style={{
                             fontFamily: 'var(--font-heading), Georgia, serif',
                             color: '#C5A55A', fontSize: '1.35rem', fontWeight: 400,

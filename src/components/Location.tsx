@@ -97,11 +97,11 @@ export default function Location() {
                                         <cat.icon size={12} style={{ color: '#C5A55A' }} />
                                         <span style={{ fontSize: '0.6rem', fontWeight: 600, color: '#C5A55A', letterSpacing: '0.2em', textTransform: 'uppercase' }}>{cat.title}</span>
                                     </div>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: '0.15rem' }}>
-                                        {cat.places.map((p) => (
-                                            <div key={p.name} className="flex items-center justify-between" style={{ padding: '0.35rem 0', borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-                                                <span style={{ color: '#555', fontSize: '0.7rem' }}>{p.name}</span>
-                                                <span style={{ color: '#6B1D2A', fontSize: '0.65rem', fontWeight: 600, whiteSpace: 'nowrap', marginLeft: '0.5rem' }}>{p.dist}</span>
+                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                        {cat.places.map((p, pi) => (
+                                            <div key={p.name} className="flex items-center justify-between" style={{ padding: '0.45rem 0.5rem', borderBottom: pi < cat.places.length - 1 ? '1px solid rgba(0,0,0,0.07)' : 'none', borderRadius: '3px' }}>
+                                                <span style={{ color: '#444', fontSize: '0.78rem', fontWeight: 500 }}>{p.name}</span>
+                                                <span style={{ color: '#6B1D2A', fontSize: '0.72rem', fontWeight: 700, whiteSpace: 'nowrap', marginLeft: '1.5rem', backgroundColor: 'rgba(107,29,42,0.07)', padding: '0.15rem 0.5rem', borderRadius: '20px' }}>{p.dist}</span>
                                             </div>
                                         ))}
                                     </div>

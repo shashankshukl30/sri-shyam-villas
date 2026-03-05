@@ -100,11 +100,11 @@ const hotelJsonLd = {
   checkinTime: "13:00",
   checkoutTime: "12:00",
   priceRange: "₹₹",
-  starRating: { "@type": "Rating", ratingValue: "4.4" },
+  starRating: { "@type": "Rating", ratingValue: "4.5" },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.4",
-    reviewCount: "200",
+    ratingValue: "4.5",
+    reviewCount: "601",
     bestRating: "5",
   },
   amenityFeature: [

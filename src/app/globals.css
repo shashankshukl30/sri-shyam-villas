@@ -15,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.95rem;
+  overscroll-behavior: contain;
 }
 
 h1,
@@ -28,6 +29,16 @@ h6 {
   line-height: 1.15;
   letter-spacing: 0.01em;
   font-weight: 600;
+}
+
+/* Smooth GPU-accelerated animations */
+* {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.motion-safe-translate {
+  transform: translateZ(0);
 }
 
 /* ===== SCROLLBAR ===== */
@@ -130,7 +141,7 @@ h6 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.35s ease;
   position: relative;
@@ -190,7 +201,7 @@ h6 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.35s ease;
   text-decoration: none;
@@ -221,7 +232,7 @@ h6 {
   font-weight: 700;
   letter-spacing: 0.08em;
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.35s ease;
   text-decoration: none;
@@ -264,7 +275,7 @@ h6 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.35s ease;
   text-decoration: none;
@@ -308,7 +319,7 @@ h6 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -350,7 +361,7 @@ h6 {
   width: 100%;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
+  border-radius: 8px;
   padding: 0.65rem 0.9rem;
   color: white;
   font-size: 0.85rem;

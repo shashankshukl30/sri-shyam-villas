@@ -62,10 +62,10 @@ export default function Hero() {
                 <div className="absolute inset-0" style={{
                     background: `
                         linear-gradient(180deg,
-                            rgba(74,14,26,0.7) 0%,
-                            rgba(74,14,26,0.4) 40%,
-                            rgba(74,14,26,0.3) 60%,
-                            rgba(74,14,26,0.85) 100%
+                            rgba(30,8,14,0.72) 0%,
+                            rgba(30,8,14,0.55) 35%,
+                            rgba(30,8,14,0.55) 65%,
+                            rgba(30,8,14,0.9) 100%
                         )
                     `,
                 }} />
@@ -73,7 +73,7 @@ export default function Hero() {
 
             {/* ── Main Content ── */}
             <div className="relative max-w-7xl mx-auto px-6 flex flex-col justify-center" style={{ zIndex: 10, minHeight: '100vh', paddingTop: '7rem', paddingBottom: '3rem' }}>
-                <div className="flex-1 flex flex-col justify-center items-center text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                <div className="flex-1 flex flex-col justify-center items-center text-center" style={{ maxWidth: '820px', margin: '0 auto', borderRadius: '16px', padding: '2rem 1.5rem', backgroundColor: 'rgba(20,6,10,0.35)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', border: '1px solid rgba(197,165,90,0.08)' }}>
                     {/* Pre-title */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ export default function Hero() {
                         className="flex flex-wrap justify-center" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}
                     >
                         {[
-                            { icon: Star, label: "Guest Rating", value: "4.4 / 5" },
+                            { icon: Star, label: "601+ Ratings", value: "4.5 / 5" },
                             { icon: MapPin, label: "Kashi Temple", value: "1.5 km" },
                             { icon: Calendar, label: "Established", value: "2024" },
                         ].map((stat, i) => (
@@ -258,12 +258,12 @@ export default function Hero() {
                     href="#about"
                     animate={{ y: [0, 6, 0] }}
                     transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex flex-col items-center" style={{ gap: '0.15rem', cursor: 'pointer', textDecoration: 'none' }}
+                    className="flex flex-col items-center" style={{ gap: '0.25rem', cursor: 'pointer', textDecoration: 'none' }}
                 >
-                    <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.5rem', letterSpacing: '0.35em', textTransform: 'uppercase', fontWeight: 500 }}>
+                    <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.55rem', letterSpacing: '0.35em', textTransform: 'uppercase', fontWeight: 700, textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
                         Discover More
                     </span>
-                    <ChevronDown size={12} style={{ color: 'rgba(197,165,90,0.4)' }} />
+                    <ChevronDown size={14} style={{ color: '#C5A55A', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.8))' }} />
                 </motion.a>
             </motion.div>
         </section>
