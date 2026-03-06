@@ -19,6 +19,7 @@ const experiences = [
             { name: "persons", label: "Number of People", type: "select", options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], required: false, half: true },
             { name: "requests", label: "Special Requests", type: "text", placeholder: "Any specific requirements...", required: false, half: false },
         ],
+        notes: ["Zero Extra Cost", "In-House Guests Only"],
         submitLabel: "Request Darshan Booking",
     },
     {
@@ -55,13 +56,15 @@ const experiences = [
     },
 ];
 
+type Experience = typeof experiences[0] & { notes?: string[] };
+
 type FieldDef = {
     name: string; label: string; type: string;
     placeholder?: string; required?: boolean; half?: boolean;
     options?: number[];
 };
 
-function ExperienceForm({ exp }: { exp: typeof experiences[0] }) {
+function ExperienceForm({ exp }: { exp: Experience }) {
     const [formData, setFormData] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
     const [sending, setSending] = useState(false);
@@ -208,9 +211,26 @@ export default function Experiences() {
                                     fontFamily: 'var(--font-heading), Georgia, serif',
                                     marginBottom: '0.5rem',
                                 }}>{exp.title}</h3>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8rem', lineHeight: 1.65, marginBottom: '1rem' }}>
+                                <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8rem', lineHeight: 1.65, marginBottom: '0.75rem' }}>
                                     {exp.description}
                                 </p>
+                                {(exp as Experience).notes && (
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>
+                                        {(exp as Experience).notes!.map((note) => (
+                                            <span key={note} style={{
+                                                display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
+                                                backgroundColor: 'rgba(197,165,90,0.12)',
+                                                border: '1px solid rgba(197,165,90,0.35)',
+                                                color: '#C5A55A',
+                                                fontSize: '0.68rem', fontWeight: 600,
+                                                letterSpacing: '0.05em', textTransform: 'uppercase',
+                                                padding: '0.25rem 0.6rem', borderRadius: '2px',
+                                            }}>
+                                                ✦ {note}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
                                 <ExperienceForm exp={exp} />
                             </div>
                         </motion.div>
