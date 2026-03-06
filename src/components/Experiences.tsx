@@ -188,14 +188,14 @@ export default function Experiences() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.7, delay: i * 0.15 }}
-                            className="group overflow-hidden"
+                            className="group overflow-hidden flex flex-col"
                             style={{
                                 backgroundColor: 'rgba(255,255,255,0.04)',
                                 border: '1px solid rgba(197,165,90,0.15)',
                                 borderRadius: '4px',
                             }}
                         >
-                            <div className="relative overflow-hidden" style={{ height: '200px' }}>
+                            <div className="relative overflow-hidden" style={{ height: '200px', flexShrink: 0 }}>
                                 <img src={exp.image} alt={exp.title}
                                     className="w-full h-full transition-transform duration-700 group-hover:scale-105"
                                     style={{ objectFit: 'cover' }} loading="lazy" />
@@ -205,7 +205,7 @@ export default function Experiences() {
                                 </div>
                             </div>
 
-                            <div style={{ padding: '1.25rem' }}>
+                            <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                                 <h3 style={{
                                     color: 'white', fontSize: '1.15rem', fontWeight: 600,
                                     fontFamily: 'var(--font-heading), Georgia, serif',
@@ -231,7 +231,9 @@ export default function Experiences() {
                                         ))}
                                     </div>
                                 )}
-                                <ExperienceForm exp={exp} />
+                                <div style={{ marginTop: 'auto' }}>
+                                    <ExperienceForm exp={exp} />
+                                </div>
                             </div>
                         </motion.div>
                     ))}
